@@ -38,7 +38,6 @@ public class Radio {
         boundsVolume(currentVolume);
     }
 
-
     public void decreaseVolumeDown() {
         currentVolume -= 1;
         boundsVolume(currentVolume);
