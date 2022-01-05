@@ -8,20 +8,29 @@ class RadioTest {
 
     @Test
     public void shouldSetNextStation() {
-        netologyFm.setNextStation(10);
-        assertEquals(0, netologyFm.getCurrentStation());
-
-        netologyFm.setNextStation(9);
+        netologyFm.setCurrentStation(10);
         assertEquals(9, netologyFm.getCurrentStation());
+
+        netologyFm.setCurrentStation(9);
+        assertEquals(9, netologyFm.getCurrentStation());
+
+        netologyFm.setCurrentStation(0);
+        assertEquals(0, netologyFm.getCurrentStation());
     }
 
     @Test
     public void shouldPrevStation() {
-        netologyFm.setPrevStation(-1);
+        netologyFm.setCurrentStation(-1);
+        assertEquals(0, netologyFm.getCurrentStation());
+
+        netologyFm.setCurrentStation(0);
+        assertEquals(0, netologyFm.getCurrentStation());
+
+        netologyFm.setCurrentStation(11);
         assertEquals(9, netologyFm.getCurrentStation());
 
-        netologyFm.setPrevStation(0);
-        assertEquals(0, netologyFm.getCurrentStation());
+        netologyFm.setCurrentStation(6);
+        assertEquals(6, netologyFm.getCurrentStation());
     }
 
     @Test
@@ -30,28 +39,10 @@ class RadioTest {
         assertEquals(5, netologyFm.getCurrentStation());
 
         netologyFm.setCurrentStation(-1);
-        assertEquals(9, netologyFm.getCurrentStation());
+        assertEquals(0, netologyFm.getCurrentStation());
 
         netologyFm.setCurrentStation(11);
-        assertEquals(0, netologyFm.getCurrentStation());
-    }
-
-    @Test
-    public void shouldIncreaseVolume() {
-        netologyFm.increaseVolume(10);
-        assertEquals(0, netologyFm.getCurrentVolume());
-
-        netologyFm.increaseVolume(8);
-        assertEquals(9, netologyFm.getCurrentVolume());
-    }
-
-    @Test
-    public void shouldDecreaseVolume() {
-        netologyFm.decreaseVolume(0);
-        assertEquals(0, netologyFm.getCurrentVolume());
-
-        netologyFm.decreaseVolume(8);
-        assertEquals(7, netologyFm.getCurrentVolume());
+        assertEquals(9, netologyFm.getCurrentStation());
     }
 
     @Test
