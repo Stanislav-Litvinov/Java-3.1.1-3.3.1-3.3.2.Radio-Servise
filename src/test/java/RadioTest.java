@@ -129,4 +129,17 @@ class RadioTest {
         netologyFm.pressVolumeDown();
         assertEquals(100, netologyFm.getCurrentVolume());
     }
+
+    //тестируем конструктор с возможностью задавать количество радиостанций при создании объекта
+    @Test
+    public void shouldCreateStationsWithLimits() {
+        Radio radio = new Radio(1);
+        assertEquals(0, radio.getMaxRadioStation());
+
+        Radio radio1 = new Radio(100);
+        assertEquals(99, radio1.getMaxRadioStation());
+
+        Radio radio2 = new Radio(10);
+        assertEquals(0, radio2.getMinRadioStation());
+    }
 }
