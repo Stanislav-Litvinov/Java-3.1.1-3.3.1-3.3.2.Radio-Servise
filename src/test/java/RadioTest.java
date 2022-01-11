@@ -142,16 +142,4 @@ class RadioTest {
         Radio radio2 = new Radio(10);
         assertEquals(0, radio2.getMinRadioStation());
     }
-
-//    @Test
-//    public void shouldTestAllArgsConstructor() {
-//        Radio radioman = new Radio(5, 10, 0,
-//                5, 100, 0);
-//        assertEquals(5, radioman.getCurrentStation());
-//        assertEquals(10, radioman.getMaxRadioStation());
-//        assertEquals(0, radioman.getMinRadioStation());
-//        assertEquals(5, radioman.getCurrentVolume());
-//        assertEquals(100, radioman.getMaxVolume());
-//        assertEquals(0, radioman.getMinVolume());
-//    }
 }
